@@ -50,11 +50,58 @@ router.get('/lisaa', function(req, res, next) {
 
 
 router.post('/hakuprosessi',function(req,res){
-	console.log('Form (from querystring): ' + req.query.form);
-	console.log('Name (from visible form field): ' + req.body.name);
-	console.log('Email (from visible form field): ' + req.body.email);
-	res.redirect(303,'/');
+	
+	var hakuParametri = {};
+	
+	if(req.body.id){
+		hakuParametri.id = req.body.id;
+	}
+	if(req.body.merkki){
+		hakuParametri.merkki = req.body.merkki;
+	}
+	if(req.body.malli){
+		hakuParametri.malli = req.body.malli;
+	}
+	if(req.body.korimalli){
+		hakuParametri.korimalli = req.body.korimalli;
+	}
+	if(req.body.polttoaine){
+		hakuParametri.polttoaine = req.body.polttoaine;
+	}
+	if(req.body.vaihteisto){
+		hakuParametri.vaihteisto = req.body.vaihteisto;
+	}
+	if(req.body.vari){
+		hakuParametri.vari = req.body.vari;
+	}
+	if(req.body.vuosi){
+		hakuParametri.vuosi = req.body.vuosi;
+	}
+	if(req.body.hinta){
+		hakuParametri.hinta = req.body.hinta;
+	}
+	
+	Auto.find(hakuParametri,function(err,autot){
+		
+		var sisalto = {
+			autot: autot.map(function(auto){
+				return{
+					id: auto.id,
+					merkki: auto.merkki,
+					malli: auto.malli,
+					korimalli: auto.korimalli,
+					polttoaine: auto.polttoaine,
+					vaihteisto: auto.vaihteisto,
+					vari: auto.vari,
+					vuosi: auto.vuosi,
+					hinta: auto.hinta
+				};
+			})
+		};
+		res.render('tulokset',sisalto);
+	});
 });
+
 router.post('/lisays-prosessointi',function(req,res){
 	
 		new Auto({
@@ -80,7 +127,7 @@ router.post('/lisays-prosessointi',function(req,res){
 	console.log(req.body.vuosi);
 	console.log(req.body.hinta);
 	
-	res.redirect(303,'/');
+	res.redirect(303,'autot');
 });
 
 module.exports = router;
