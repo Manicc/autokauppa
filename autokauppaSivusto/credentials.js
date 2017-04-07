@@ -1,3 +1,3 @@
 module.exports ={
-	cookieSecret: 'jcpEVATq';
+	cookieSecret: 'jcpEVATq',
 }
