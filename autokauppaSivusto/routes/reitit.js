@@ -5,7 +5,28 @@ var Auto = require('../models/auto.js');
 router.use(require('body-parser').urlencoded({extended:true}));
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+	var hakuParametri = {};
+	hakuParametri.id = Math.floor(Math.random() * 3 + 1);
+	console.log(hakuParametri.id);
+	Auto.find(hakuParametri, function(err,autot){
+		var sisalto = {
+			autot: autot.map(function(auto){
+				return{
+					id: auto.id,
+					merkki: auto.merkki,
+					malli: auto.malli,
+					korimalli: auto.korimalli,
+					polttoaine: auto.polttoaine,
+					vaihteisto: auto.vaihteisto,
+					vari: auto.vari,
+					vuosi: auto.vuosi,
+					hinta: auto.hinta
+				};
+			})
+		};
+		res.render('index', sisalto);
+	});
+  
 });
 
 router.get('/hakusivu', function(req, res, next) {
@@ -36,6 +57,7 @@ router.get('/autot', function(req, res, next) {
 		};
 		res.render('autot',sisalto);
 	});
+	
 });
 
 router.get('/auto', function(req, res, next) {
