@@ -43,6 +43,10 @@ app.use('/', index);
 app.use(express.static(__dirname + '/public'));
 app.use(require('body-parser').urlencoded({extended:true}));
 
+
+
+
+
 app.use(function(req,res){
 	res.status(404);
 	res.render('404');
