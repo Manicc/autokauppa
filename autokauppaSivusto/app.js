@@ -1,9 +1,5 @@
 var express = require('express');
-
-var index = require('./routes/reitit');
-
 var app = express();
-
 var hbs = require('express-handlebars')
 	.create({defaultLayout: 'main',
 	extname: '.hbs',
@@ -16,10 +12,22 @@ var hbs = require('express-handlebars')
 	}
 });
 
+var index = require('./routes/reitit');
+
+// Tietokanta
+var mongoose = require('mongoose');
+var opts = {
+	server: {
+		socketOptions:{keepAlive:120}
+	}
+};
+
+mongoose.connect('mongodb://admin:admin123@ds151060.mlab.com:51060/autokauppa', opts);
+var Auto = require('./models/auto.js');
+
 
 
 // view engine setup
-
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('port', process.env.PORT || 3000);
