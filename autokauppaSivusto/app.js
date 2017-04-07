@@ -25,6 +25,24 @@ var opts = {
 mongoose.connect('mongodb://admin:admin123@ds151060.mlab.com:51060/autokauppa', opts);
 var Auto = require('./models/auto.js');
 
+// Alkutiedon lisäys
+Auto.find(function(err,autot){
+	if(err) return console.error(err);
+	if(autot.length) return;
+	
+	new Auto({
+		id: 1,
+		merkki: 'Audi',
+		malli: 'A4',
+		korimalli: 'Porrasperä',
+		polttoaine: 'Bensiini',
+		vaihteisto: 'Manuaali',
+		vari: 'Punainen',
+		vuosi: 2002,
+		hinta: 4500,
+	}).save();
+});
+
 
 
 // view engine setup

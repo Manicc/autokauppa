@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var autoSkeema = mongoose.Schema({
+	id: Number,
 	merkki: String,
 	malli: String,
 	korimalli: String,

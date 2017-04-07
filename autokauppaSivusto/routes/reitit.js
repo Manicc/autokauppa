@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Auto = require('../models/auto.js');
 
 router.use(require('body-parser').urlencoded({extended:true}));
 /* GET home page. */
@@ -16,7 +17,24 @@ router.get('/tulokset', function(req, res, next) {
 });
 
 router.get('/autot', function(req, res, next) {
-  res.render('autot');
+	Auto.find(function(err,autot){
+		var sisalto = {
+			autot: autot.map(function(auto){
+				return{
+					id: auto.id,
+					merkki: auto.merkki,
+					malli: auto.malli,
+					korimalli: auto.korimalli,
+					polttoaine: auto.polttoaine,
+					vaihteisto: auto.vaihteisto,
+					vari: auto.vari,
+					vuosi: auto.vuosi,
+					hinta: auto.hinta
+				};
+			})
+		};
+		res.render('autot',sisalto);
+	});
 });
 
 router.get('/auto', function(req, res, next) {
