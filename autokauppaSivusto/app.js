@@ -1,5 +1,10 @@
 var express = require('express');
+
 var app = express();
+
+// evästeet
+var credentials = require('./credentials.js');
+
 var hbs = require('express-handlebars')
 	.create({defaultLayout: 'main',
 	extname: '.hbs',
@@ -50,8 +55,22 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('port', process.env.PORT || 3000);
 
+// evästeet middlware.
+app.use(require('cookie-parser')(credentials.cookieSecret));
+app.use(require('express-session')({
+    resave: false,
+    saveUninitialized: false,
+    secret: credentials.cookieSecret,
+}));
 
-
+/* flash message middleware */
+app.use(function(req, res, next){
+	// if there's a flash message, transfer
+	// it to the context, then clear it
+	res.locals.flash = req.session.flash;
+	delete req.session.flash;
+	next();
+});
 
 // Static middleware
 

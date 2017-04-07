@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/hakusivu', function(req, res, next) {
   res.render('hakusivu');
+  //res.cookie('');
 });
 
 router.get('/tulokset', function(req, res, next) {
