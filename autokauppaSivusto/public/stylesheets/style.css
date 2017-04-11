@@ -4,13 +4,23 @@ html, body {
 	padding: 10px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     //background-image: url('/imgs/background.jpg');
-	width: auto;
 	margin: 0;
     height: 100%;
 }
 
 a{
   color: #00B7FF;
+  font-weight: bold;
+}
+
+p, label{
+	font-weight: bold;
+}
+
+h1{
+	text-decoration: underline;
+	text-decoration-color: red;
+	-moz-text-decoration-color: red; /* Code for Firefox */
 }
 
 #nav{
@@ -23,6 +33,27 @@ li{
   list-style-type: none;
   border-right:1px solid #bbb;	
 }
+
+input {
+    width: 40%;
+}
+
+input[type=text]:focus {
+	width: 40%;
+	 border: 3px solid #555;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+select {
+    width: 40%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+
 	
 ul.topnav {
     list-style-type: none;
@@ -55,11 +86,35 @@ ul.topnav li.right {
 	float: right;
 }
 
-
 .clearfix::after{
 	content: "";
 	clear: both;
 	display: table;
+}
+
+
+#col1{
+	background-color: red;
+	width:35%;
+	padding: 5px;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 5px;
+    position:relative;
+	animation: ani1 2s;
+}
+
+@keyframes ani1{
+
+	0%{left:0px; top:-200px;}
+	40%{left:0px; top:0px;}
+	50%{left:0px; top:-30px;}
+	70%{left:0px; top:0px;}
+	85%{left:0px; top:-20px;}
+	90%{left:0px; top:0px;}
+	95%{left:0px; top:-10px;}
+	100%{left:0px; top:0px;}
 }
 
 .column{
@@ -96,16 +151,27 @@ ul.topnav li.right {
 	background-color: #e8eced;
 }
 
+.lomake{
+   background-color: #e8eced;
+   border: solid 1px red;
+   box-shadow: 5px 5px 5px #888888;
+   padding: 20px;
+	
+}
+
 .footer {
-   position: fixed;
-   bottom: 0;
    width:100%;
    background-color: #00253d;
    border: solid 1px red;
    box-shadow: 5px 5px 5px #888888;
-   float: left;
    color:white;
+   clear: left;
    padding: 10px;
+   position:fixed; 
+   margin: 0;  
+   bottom: 0;
+   right: 0;
+   text-align: center;
 }
 
 
