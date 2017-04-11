@@ -9,14 +9,11 @@
 
 <h1>Tervetuloa maailman paskimalle autosivulle xD</h1>
 
-	<div class ="auto">
-	<p>Päivän nosto!</p>
 	<div class ="clearfix">
 	
 		<div class = "column autoContainer">
 		<p>Päivän nosto!</p>
-		{{#each autot}}
-			<div class="auto">
+		{{#each autot}}		
 				<h3>{{id}}</h3>
 				<p>Merkki: {{merkki}}</p>
 				<p>Malli: {{malli}}</p>
@@ -26,7 +23,6 @@
 				<p>Väri: {{vari}}</p>
 				<p>Vuosi: {{vuosi}}</p>
 				<p>Hinta: {{hinta}}</p>
-			</div>
 		{{/each}}
 	</div>
 		
@@ -95,6 +91,5 @@
 				   </a>
 				</div>
 			</div>
-		<p> Katso kaikki </p>
 		</div>
 	</div>
