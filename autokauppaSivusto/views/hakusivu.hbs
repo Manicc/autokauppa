@@ -1,5 +1,6 @@
 <h1>Hakusivu</h1>
 
+
 	<form class="form-horizontal" role="form"
 		action="/hakuprosessi?form=hakuparametrit" method ="POST">
 		
@@ -26,25 +27,41 @@
 		</div>
 		
 		<div class="form-group">
-			<label for="fieldName" class="col-sm-2 controll-label">Korimalli</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" id="fieldName" name="korimalli">
-			</div>
+			<p><label for="fieldName" class="col-sm-2 controll-label">Korimalli</label>
+				<select id="fieldName" name="korimalli">
+					<option value="" selected="selected">Valitse tyyppi</option>
+					<option value="Porrasperä">Porrasperä</option>
+					<option value="Farmari">Farmari</option>
+					<option value="Viistopera">Viistoperä</option>
+					<option value="Tila-auto">Tila-auto</option>
+					<option value="Coupe">Coupé</option>
+					<option value="Avoauto">Avoauto</option>
+					<option value="Muu">Muu</option>
+				</select>
+			</label></p>
 		</div>
 		
 		<div class="form-group">
-			<label for="fieldName" class="col-sm-2 controll-label">Polttoaine</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" id="fieldName" name="polttoaine">
-			</div>
+			<p><label for="fieldName" class="col-sm-2 controll-label">Polttoaine</label>
+				<select id="fieldName" name="polttoaine">
+					<option value="" selected="selected">Valitse tyyppi</option>
+					<option value="Bensiini">Bensiini</option>
+					<option value="Diesel">Diesel</option>
+					<option value="Polttooljy">Polttoöljy</option>
+					<option value="Sahko">Sähkö</option>
+				</select>
+			</label></p>
 		</div>
 		
 		
 		<div class="form-group">
-			<label for="fieldName" class="col-sm-2 controll-label">Vaihteisto</label>
-			<div class="col-sm-4">
-				<input type="text" class="form-control" id="fieldName" name="vaihteisto">
-			</div>
+			<p><label for="fieldName" class="col-sm-2 controll-label">Vaihteisto</label>
+				<select id="fieldName" name="vaihteisto">
+					<option value="" selected="selected">Valitse tyyppi</option>
+					<option value="Manuaali">Manuaali</option>
+					<option value="Automaatti">Automaatti</option>
+				</select>
+			</label></p>
 		</div>
 		
 		
@@ -59,7 +76,7 @@
 		<div class="form-group">
 			<label for="fieldName" class="col-sm-2 controll-label">Vuosi</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="fieldName" name="vuosi" required>
+				<input type="text" class="form-control" id="fieldName" name="vuosi">
 			</div>
 		</div>
 		
@@ -67,7 +84,7 @@
 		<div class="form-group">
 			<label for="fieldName" class="col-sm-2 controll-label">Hinta</label>
 			<div class="col-sm-4">
-				<input type="text" class="form-control" id="fieldName" name="hinta" required>
+				<input type="text" class="form-control" id="fieldName" name="hinta">
 			</div>
 		</div>
 		
