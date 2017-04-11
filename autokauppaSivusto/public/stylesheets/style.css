@@ -1,8 +1,16 @@
+* { box-sizing: border-box; }
+
 body {
 	padding: 50px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-image: url('/imgs/background.jpg');
-	background-repeat: repeat-x;
+	border: solid 1px red;
+	width: auto;
+}
+
+#nav{
+	background-color: black;
+	margin: left;	
 }
 	
 //navigaatio
@@ -27,11 +35,11 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover:not(.active) {
-background-color: red;
+background-color: blue;
 }
 
 ul.topnav li a.active {
-	background-color: red;
+	background-color: yellow;
 }
 
 ul.topnav li.right {float: right;}
