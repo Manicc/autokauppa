@@ -7,7 +7,8 @@ router.use(require('body-parser').urlencoded({extended:true}));
 router.get('/', function(req, res, next) {
 	
 	var hakuParametri = {};
-	hakuParametri.id = Math.floor(Math.random() * 3 + 1);
+	hakuParametri.id = Math.floor(Math.random() * 20 + 1);
+	
 	console.log(hakuParametri.id);
 	Auto.find(hakuParametri, function(err,autot){
 		var sisalto = {
@@ -56,7 +57,9 @@ router.get('/autot', function(req, res, next) {
 				};
 			})
 		};
+		console.log(autot.length);
 		res.render('autot',sisalto);
+		
 	});
 	
 });
