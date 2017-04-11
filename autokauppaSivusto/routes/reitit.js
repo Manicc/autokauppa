@@ -5,6 +5,7 @@ var Auto = require('../models/auto.js');
 router.use(require('body-parser').urlencoded({extended:true}));
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	
 	var hakuParametri = {};
 	hakuParametri.id = Math.floor(Math.random() * 3 + 1);
 	console.log(hakuParametri.id);
