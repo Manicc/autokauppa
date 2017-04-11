@@ -3,24 +3,29 @@
 body {
 	padding: 50px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-image: url('/imgs/background.jpg');
+    //background-image: url('/imgs/background.jpg');
 	border: solid 1px red;
 	width: auto;
+	margin: 0;
 }
 
 #nav{
-	background-color: black;
+	background-color: red;
 	margin: left;	
 	border: solid 5px purple;
 }
+
+li{
+  list-style-type: none;
+  border-right:1px solid #bbb;	
+}
 	
-//navigaatio
 ul.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: yellow;
+    background-color: green;
 }
 
 ul.topnav li {
@@ -40,22 +45,19 @@ background-color: blue;
 }
 
 ul.topnav li a.active {
-	background-color: yellow;
+	background-color: brown;
 }
 
-ul.topnav li.right {float: right;}
+ul.topnav li.right {
+	float: right;
+}
 
 @media screen and (max-width: 600px){
     ul.topnav li.right, 
     ul.topnav li {float: none;}
-=======
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:#ffffcc;
->>>>>>> origin/master
 }
 
-a {
+a{
   color: #00B7FF;
 }
 
