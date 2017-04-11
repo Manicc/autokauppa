@@ -9,8 +9,6 @@ body {
 	margin: 0;
 }
 
-
-//navigointi
 #nav{
 	background-color: red;
 	border: solid 5px purple;
@@ -78,6 +76,15 @@ ul.topnav li.right {
 	width: 60%;
 	background-color: white;
 }
+
+.auto{
+	border: solid 2px blue;
+	margin: 0;
+	padding-top: 10px;
+	padding-left: 15px;
+	width: auto;
+}
+
 
 a{
   color: #00B7FF;
