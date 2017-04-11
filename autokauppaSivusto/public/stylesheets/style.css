@@ -1,17 +1,22 @@
 * { box-sizing: border-box; }
 
-body {
-	padding: 50px;
+html, body {
+	padding: 10px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     //background-image: url('/imgs/background.jpg');
-	border: solid 1px red;
 	width: auto;
 	margin: 0;
+    height: 100%;
+}
+
+a{
+  color: #00B7FF;
 }
 
 #nav{
-	background-color: red;
-	border: solid 5px purple;
+	background-color: #f3f5f7;
+	border: solid 1px red;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 li{
@@ -24,7 +29,7 @@ ul.topnav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: green;
+    background-color: #00253d;
 }
 ul.topnav li {
 	float: left;
@@ -39,7 +44,7 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover:not(.active) {
-background-color: blue;
+background-color: #4985aa;
 }
 
 ul.topnav li a.active {
@@ -50,15 +55,6 @@ ul.topnav li.right {
 	float: right;
 }
 
-@media screen and (max-width: 600px){
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
-}
-
-.column{
-	float: left;
-	padding: 15px;
-}
 
 .clearfix::after{
 	content: "";
@@ -66,28 +62,84 @@ ul.topnav li.right {
 	display: table;
 }
 
+.column{
+	float: left;
+	padding: 15px;
+}
+
 .autoContainer{
-	border: solid 2px red;
-	width: 40%;
-	background-color: white;
+	border: solid 2px black;
+	width: 35%;
+	background-color: #e8eced;
+	min-height: 600px;
+	box-shadow: 5px 5px 5px #888888;
+	margin-right: 10px;
+	margin-bottom: 20px;
 }
 .galleria{
-    border: solid 2px blue;
-	width: 60%;
-	background-color: white;
+    border: 2px solid black;
+	width: 64%;
+	background-color: #e8eced;
+	min-height: 362px;
+	box-shadow: 5px 5px 5px #888888;
 }
 
 .auto{
-	border: solid 2px blue;
-	margin: 0;
+	border: solid 1px black;
+	margin-bottom: 10px;
+	margin-left: 10px;
 	padding-top: 10px;
-	padding-left: 15px;
-	width: auto;
+	padding: 10px;
+	width: 49%;
+	float:left;
+	box-shadow: 5px 0 5px 1px #888888;
+	background-color: #e8eced;
+}
+
+.footer {
+   position: fixed;
+   bottom: 0;
+   width:100%;
+   background-color: #00253d;
+   border: solid 1px red;
+   box-shadow: 5px 5px 5px #888888;
+   float: left;
+   color:white;
+   padding: 10px;
 }
 
 
-a{
-  color: #00B7FF;
+
+@media only screen and (max-width: 700px){
+    .autoContainer{ {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
 }
+
+
+
+@media only screen and (max-width: 700px){
+    .auto {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .auto {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+
+
+
 
 
