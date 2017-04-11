@@ -9,9 +9,10 @@ body {
 	margin: 0;
 }
 
+
+//navigointi
 #nav{
 	background-color: red;
-	margin: left;	
 	border: solid 5px purple;
 }
 
@@ -27,7 +28,6 @@ ul.topnav {
     overflow: hidden;
     background-color: green;
 }
-
 ul.topnav li {
 	float: left;
 }
@@ -55,6 +55,28 @@ ul.topnav li.right {
 @media screen and (max-width: 600px){
     ul.topnav li.right, 
     ul.topnav li {float: none;}
+}
+
+.column{
+	float: left;
+	padding: 15px;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.autoContainer{
+	border: solid 2px red;
+	width: 40%;
+	background-color: white;
+}
+.galleria{
+    border: solid 2px blue;
+	width: 60%;
+	background-color: white;
 }
 
 a{
