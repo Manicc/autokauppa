@@ -4,7 +4,7 @@
 
 /* galleria luokan tyylit */
 .gallery {
-
+	float: right;
 }
 
 .gallery:hover {
@@ -13,20 +13,17 @@
 }
 
 .gallery img {
-    float: right;
-	clear: left;
+	width: 100%;
 }
 
 /* etusivun päivän nosto kuvan tyylit */
 .mainos img{
-	float: right;
 	padding:5px;
-    float: left;
-	width: 100%;
-	min-height: 350px;
-	max-height: 350px;
+	min-height: 354px;
+	max-height: 354px;
 	border: solid 2px red;
 	box-shadow: 5px 0 5px 1px #888888;
+	width: 100%;
 }
 .mainos:hover {
 	opacity: 0.7;
@@ -34,9 +31,7 @@
 }
 
 /* Etusivun autogallerian kuvat */
-.etusivu img {
-    float: left;
-	width: 100%;
+.etusivu img {  
 	height: auto;
 	min-height: 200px;
 	max-height: 200px;
@@ -44,21 +39,15 @@
 	margin-top: 5px;
 	box-shadow: 5px 0 5px 1px #888888;
 }
-/* autojen selaus sivun kuvien tyylit */
-#sautogalleria{
-	width: 50%;
-	float: right;
-	clear: left;
-}
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+/* autojen selaus sivun kuvien tyylit */
+.autogalleria img{
+	min-height: 350px;
+	max-height: 350px;
+	width: 100%;
 }
 
 /* Responsiivisyys*/
-
 .responsive {
     padding: 0 6px;
     float: left;
@@ -77,10 +66,4 @@
     .responsive {
         width: 100%;
     }
-}
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
 }

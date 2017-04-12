@@ -1,7 +1,8 @@
 <h1> Kaikki ilmoitukset </h1>
+<div class="clearfix">
 {{#each autot}}
-
-	<div class="auto">
+<div class="clearfix">
+	<div class="column auto">
 		<h3>ID: {{id}}</h3>
 		<p>Merkki: {{merkki}}</p>
 		<p>Malli: {{malli}}</p>
@@ -12,7 +13,7 @@
 		<p>Vuosi: {{vuosi}}</p>
 		<p>Hinta: {{hinta}}</p>
 						
-		<div class ="gallery"id="autogalleria">
+		<div class ="column autogalleria">
 			<a target="_blank" href="/imgs/autot/{{id}}.jpg">
 			<img src="/imgs/autot/{{id}}.jpg">
 			</a>
@@ -20,5 +21,6 @@
 	</div>		
 
 {{/each}}
-<h6>its a secret </h6>
+</div>
+</br>
 
