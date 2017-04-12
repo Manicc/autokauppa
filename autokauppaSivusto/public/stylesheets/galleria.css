@@ -1,12 +1,4 @@
 * { box-sizing: border-box; }
-body {
-	padding: 50px;
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    //background-image: url('/imgs/background.jpg');
-	width: auto;
-	margin: 0;
-}
-
 
 div.gallery {
     border: 1px solid #ccc
@@ -37,7 +29,6 @@ div.gallery img {
     clear: both;
     display: table;
 }
-
 
 .responsive {
     padding: 0 6px;
