@@ -25,6 +25,11 @@ h1{
 	-moz-text-decoration-color: red; /* Code for Firefox */
 }
 
+/* ei saa muuttaa */
+h6{
+	color:white;
+}
+
 /* navigaatiopalkki ja sen tyylit */
 #nav{
 	background-color: #f3f5f7;
