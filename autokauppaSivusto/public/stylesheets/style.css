@@ -1,4 +1,6 @@
-* { box-sizing: border-box; }
+* {
+	box-sizing: border-box; 
+}
 
 html, body {
 	padding: 50px;
@@ -7,11 +9,6 @@ html, body {
 	margin: 0;
     height: 100%;
 	width: auto;
-}
-
-a{
-  color: #00B7FF;
-  font-weight: bold;
 }
 
 /* tekstit ja labelit */
@@ -23,6 +20,11 @@ h1{
 	text-decoration: underline;
 	text-decoration-color: red;
 	-moz-text-decoration-color: red; /* Code for Firefox */
+}
+
+a{
+  color: #00B7FF;
+  font-weight: bold;
 }
 
 /* ei saa muuttaa */
@@ -114,9 +116,19 @@ select {
 	color: white;
 	text-align: center;
 	font-size: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 1px;
     position:relative;
 	animation: ani1 2s;
+}
+
+#col2{
+	background-color: #4985aa;
+	width:64%;
+	float: right;
+	padding: 10px;
+	margin-bottom: 1px;
+	color: white;
+	font-weight: bold;
 }
 
 @keyframes ani1{
@@ -132,9 +144,7 @@ select {
 }
 
 /* sisältökappaleiden tyylit */
-
 .column{
-	float: left;
 	padding: 15px;
 }
 
@@ -143,10 +153,10 @@ select {
 	border: solid 2px black;
 	width: 35%;
 	background-color: #e8eced;
-	min-height: 600px;
+	min-height: 80%;
 	box-shadow: 5px 5px 5px #888888;
 	margin-right: 10px;
-	margin-bottom: 20px;
+	float: left;
 }
 
 /* oikea puoli */
@@ -154,8 +164,9 @@ select {
     border: 2px solid black;
 	width: 64%;
 	background-color: #e8eced;
-	min-height: 362px;
 	box-shadow: 5px 5px 5px #888888;
+	min-height: 80%;
+	float: right;
 }
 
 /* autojen selaus sivun tyyli */
@@ -182,7 +193,6 @@ select {
 }
 
 /* Mediaqueryt skaalaamiseen */
-
 @media only screen and (max-width: 700px){
     .autoContainer{ {
         width: 49.99999%;
@@ -207,7 +217,6 @@ select {
     ul.topnav li.right, 
     ul.topnav li {float: none;}
 }
-
 
 
 
