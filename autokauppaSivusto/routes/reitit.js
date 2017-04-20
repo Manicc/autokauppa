@@ -2,15 +2,18 @@ var express = require('express');
 var router = express.Router();
 var Auto = require('../models/auto.js');
 
+// body-parserilla haetaan kenttien arvoja lomakkeista.
 router.use(require('body-parser').urlencoded({extended:true}));
-/* GET home page. */
+
+// Etusivu
 router.get('/', function(req, res, next) {
 	
-	var hakuParametri = {};
-	hakuParametri.id = Math.floor(Math.random() * 20 + 1);
+	// Etusivulla näytetään satunnainen auto
+	var paivanTarjousAuto = {};
+	paivanTarjousAuto.id = Math.floor(Math.random() * 20 + 1);
 	
-	console.log(hakuParametri.id);
-	Auto.find(hakuParametri, function(err,autot){
+	// Tietokannasta etsitään auto ID:n perusteella
+	Auto.find(paivanTarjousAuto, function(err,autot){
 		var sisalto = {
 			autot: autot.map(function(auto){
 				return{
@@ -33,13 +36,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/hakusivu', function(req, res, next) {
   res.render('hakusivu');
-  //res.cookie('');
 });
 
-router.get('/tulokset', function(req, res, next) {
-  res.render('tulokset');
-});
-
+// Sivulla näytetään kaikki sivustolle jätetyt ilmoitukset
 router.get('/autot', function(req, res, next) {
 	Auto.find(function(err,autot){
 		var sisalto = {
@@ -64,19 +63,19 @@ router.get('/autot', function(req, res, next) {
 	
 });
 
-router.get('/auto', function(req, res, next) {
-  res.render('auto');
-});
-
+// Sivu, jossa voidaan jättää ilmoitus sivustolle
 router.get('/lisaa', function(req, res, next) {
   res.render('lisaa');
 });
 
-
-
+// Hakutulokset
+router.get('/tulokset', function(req, res, next) {
+  res.render('tulokset');
+});
 
 router.post('/hakuprosessi',function(req,res){
 	
+	// hakuParametri muuttujaan kootaan hakulomakkeen arvot
 	var hakuParametri = {};
 	
 	if(req.body.id){
@@ -107,6 +106,7 @@ router.post('/hakuprosessi',function(req,res){
 		hakuParametri.hinta = req.body.hinta;
 	}
 	
+	// hakuParametri muuttujalla haetaan tietueita tietokannasta.
 	Auto.find(hakuParametri,function(err,autot){
 		
 		var sisalto = {
@@ -124,12 +124,14 @@ router.post('/hakuprosessi',function(req,res){
 				};
 			})
 		};
+		// Tietokannasta palautetut tietueet lähetetään /tulokset sivulle.
 		res.render('tulokset',sisalto);
 	});
 });
 
 router.post('/lisays-prosessointi',function(req,res){
 	
+		// Lomakkeen arvot asetetaan skeemaan ja lähetetään tietokantaan
 		new Auto({
 		id: req.body.id,
 		merkki: req.body.merkki,
