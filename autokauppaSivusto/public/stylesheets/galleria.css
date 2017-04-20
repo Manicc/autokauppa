@@ -1,4 +1,4 @@
-* {
+*{
 	box-sizing: border-box; 
 }
 
@@ -9,7 +9,6 @@
 
 .gallery:hover {
 	opacity: 0.7;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 
 .gallery img {
@@ -45,6 +44,7 @@
 	min-height: 350px;
 	max-height: 350px;
 	width: 100%;
+	box-shadow: 5px 0 5px 1px #888888;
 }
 
 /* Responsiivisyys*/
