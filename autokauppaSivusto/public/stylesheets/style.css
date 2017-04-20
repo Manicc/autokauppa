@@ -2,6 +2,7 @@
 	box-sizing: border-box; 
 }
 
+/* Yleinen HTML ja bodyn asetukset */
 html, body {
 	padding: 50px;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -9,9 +10,10 @@ html, body {
 	margin: 0;
     height: 100%;
 	width: auto;
+	min-width: 1220px;
 }
 
-/* tekstit ja labelit */
+/* tekstit, otsikot ja labelit */
 p, label{
 	font-weight: bold;
 }
@@ -75,6 +77,8 @@ ul.topnav li.right {
 	float: right;
 }
 
+/*Clearfix korjaa elementtien pituuseroista johtuvat 
+overflow ongelmat. */
 .clearfix::after{
 	content: "";
 	clear: both;
@@ -88,7 +92,7 @@ input {
 
 input[type=text]:focus {
 	width: 40%;
-	 border: 3px solid #555;
+	border: 3px solid #555;
     margin: 8px 0;
     box-sizing: border-box;
 }
@@ -124,7 +128,7 @@ select {
     outline-color: red;
 	outline-style: dotted;
 }
-
+/* Gallerian otsikko*/
 #col2{
 	background-color: #4985aa;
 	width:64%;
@@ -136,6 +140,7 @@ select {
 	float: right;
 }
 
+/* Animaatio col1:selle */
 @keyframes ani1{
 
 	0%{left:0px; top:-200px;}
@@ -149,6 +154,8 @@ select {
 }
 
 /* sisältökappaleiden tyylit */
+
+/* yleisasetukset */
 .column{
 	padding: 15px;
 	float: left;
@@ -174,6 +181,7 @@ select {
 	box-shadow: 5px 5px 5px #888888;
 	min-height: 80%;
 	float: right;
+	min-width: 200px;
 }
 
 /* autojen selaus sivun tyyli */
@@ -199,31 +207,12 @@ select {
    padding:10px;
 }
 
-/* Mediaqueryt skaalaamiseen */
-@media only screen and (max-width: 700px){
-    .autoContainer{ {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-
-@media only screen and (max-width: 700px){
-    .auto {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-}
-
 @media only screen and (max-width: 500px){
-    .auto {
+    .body {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 600px){
-    ul.topnav li.right, 
-    ul.topnav li {float: none;}
-}
 
 
 
